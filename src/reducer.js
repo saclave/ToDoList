@@ -1,23 +1,16 @@
-import { combineReducers } from "redux";
-
-const size = (state = 0, action) => {
-    if (action.type === "UPDATE_COUNTER_SIZE") {
-        return action.payload;
+const todos = (state = [], action) => {
+    switch(action.type) {
+        case 'ADD_TODO':
+            return [
+                ...state,
+                {
+                    id: action.id,
+                    text: action.text,
+                    completed: false
+                }
+            ];
+        default : return state;    
     }
-
-    return state;
 }
 
-const sum = (state = 0, action) => {
-    if (action.type === "INCREASE_SUM") {
-        return state + 1;
-    } else if (action.type === "DECREASE_SUM") {
-        return state - 1;
-    }
-    else if (action.type === "RESET_SUM") {
-        return state;
-    }
-    return state;
-}
-
-export default combineReducers({ size, sum })
+export default todos;
