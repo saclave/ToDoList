@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import { addItem } from '../action';
-import Todo from '../components/Todo';
+import { addTodo } from '../action';
+import TodoGenerator from '../components/TodoGenerator';
 
 const mapDispatchToProps = dispatch => ({
-  addItem: (todo) => { dispatch(addItem(todo)) }
+  addTodo: (todo) => { dispatch(addTodo(todo)) }
 });
 
 const mapStateToProps = state =>({
-  todos : state.todos
+    actionEvent : state.actionEvent
 })
 
-const TodoGeneratorContainer = connect(mapStateToProps, mapDispatchToProps)(Todo);
+const TodoGeneratorContainer = connect(mapStateToProps, mapDispatchToProps)(TodoGenerator);
 
 export default TodoGeneratorContainer;
