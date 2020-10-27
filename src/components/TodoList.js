@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import TodoGeneratorContainer from '../containers/TodoGeneratorContainer';
 
-const TodoList = () => {
-
+class TodoList extends Component {
+  render() {
     return (
-        <div>TodoList</div>
-    )
+      <div>
+        <h1 id="appName">TodoList</h1>
+        <TodoGeneratorContainer/>
+      </div>
+    );
+  }
 }
 
 export default TodoList;
