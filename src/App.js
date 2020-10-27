@@ -1,12 +1,14 @@
 import './App.css';
-import TodoList from "./components/TodoList";
-import TodoGenerator from "./components/TodoGenerator";
+import TodoGenerator from './components/TodoGenerator';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
-      <TodoGenerator />
-      <TodoList />
+      <header className="App-header">
+        <TodoGenerator />
+        <TodoList />
+      </header>
     </div>
   );
 }
